@@ -1,15 +1,21 @@
+%define	snap	20010826
 Summary:	icqlib library
 Summary(pl):	Biblioteka icqlib
 Name:		icqlib
-Version:	1.0.0
-Release:	1
+Version:	1.2.0
+Release:	0.%{snap}
 License:	GPL
+# snap from cvs repository
 Group:		Libraries
 Group(de):	Libraries
 Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	http://download.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Group(pt_BR):	Bibliotecas
+Group(ru):	‚…¬Ã…œ‘≈À…
+Group(uk):	‚¶¬Ã¶œ‘≈À…
+Source0:	http://download.sourceforge.net/%{name}/%{name}-%{version}-%{snap}.tar.gz
+Patch0:		%{name}-m4.patch
 URL:		http://kicq.sourceforge.net/icqlib.shtml
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -19,24 +25,29 @@ Conflicts:	libicq
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-icqlib is the most feature complete, open source, library implementation
-of Mirabilis' ICQ protocol available on the Internet. icqlib currently
-supports approximately 90% of the ICQ UDP v5 protocol and 80% of the
-ICQ TCP v2 protocol, including new UIN registration, chat, and file
-transfer.
+icqlib is the most feature complete, open source, library
+implementation of Mirabilis' ICQ protocol available on the Internet.
+icqlib currently supports approximately 90% of the ICQ UDP v5 protocol
+and 80% of the ICQ TCP v2 protocol, including new UIN registration,
+chat, and file transfer.
 
 %description -l pl
-icqlib jest najbardziej kompletn±, open sourcow± bibliotek± implementuj±c±
-protokÛ≥ Mirabilis ICQ. icqlib aktualnie obs≥uguj ok 90% protoko≥u ICQ UDP v5
-oraz 80% ICQ TCP V2 w≥±czaj±c w to nowy sposÛb rejstracji UIN, chat oraz transfer plikÛw.
+icqlib jest najbardziej kompletn±, open sourcow± bibliotek±
+implementuj±c± protokÛ≥ Mirabilis ICQ. icqlib aktualnie obs≥uguj ok
+90% protoko≥u ICQ UDP v5 oraz 80% ICQ TCP V2 w≥±czaj±c w to nowy
+sposÛb rejstracji UIN, chat oraz transfer plikÛw.
 
 %package devel
 Summary:	Header files etc to develop icqlib applications
 Summary(pl):	Pliki nag≥Ûwkowe i inne do icqlib
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Ú¡⁄“¡¬œ‘À¡/‚…¬Ã…œ‘≈À…
+Group(uk):	Úœ⁄“œ¬À¡/‚¶¬Ã¶œ‘≈À…
 Requires:	%{name} = %{version}
 
 %description devel
@@ -51,8 +62,12 @@ Summary:	Static icqlib libraries
 Summary(pl):	Biblioteka statyczna icqlib
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Ú¡⁄“¡¬œ‘À¡/‚…¬Ã…œ‘≈À…
+Group(uk):	Úœ⁄“œ¬À¡/‚¶¬Ã¶œ‘≈À…
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -62,15 +77,12 @@ Static icqlib libraries.
 Biblioteka statyczna icqlib.
 
 %prep
-%setup -q
+%setup -q -n %{name}
+%patch0 -p1
 
 %build
-#libtoolize --copy --force
-#rm missing
-#aclocal
-#autoconf
-#automake -a -c
-%configure2_13
+%{__make} -f Makefile.cvs
+%configure
 %{__make}
 
 %install
@@ -79,7 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf AUTHORS ChangeLog README TODO DEVEL
+gzip -9nf AUTHORS ChangeLog README TODO DEVEL CHANGES*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -94,7 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc {ChangeLog,DEVEL}.gz 
+%doc {ChangeLog,DEVEL,CHANGES*}.gz 
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/*.h
