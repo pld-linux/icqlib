@@ -1,0 +1,66 @@
+diff -urN icqlib.org/admin/acinclude.m4.in icqlib/admin/acinclude.m4.in
+--- icqlib.org/admin/acinclude.m4.in	Sun Aug 26 13:10:33 2001
++++ icqlib/admin/acinclude.m4.in	Sun Aug 26 13:10:54 2001
+@@ -2663,51 +2663,6 @@
+ ])
+ 
+ 
+-# Check whether LC_MESSAGES is available in <locale.h>.
+-# Ulrich Drepper <drepper@cygnus.com>, 1995.
+-
+-# serial 1
+-
+-AC_DEFUN(AM_LC_MESSAGES,
+-  [if test $ac_cv_header_locale_h = yes; then
+-    AC_CACHE_CHECK([for LC_MESSAGES], am_cv_val_LC_MESSAGES,
+-      [AC_TRY_LINK([#include <locale.h>], [return LC_MESSAGES],
+-       am_cv_val_LC_MESSAGES=yes, am_cv_val_LC_MESSAGES=no)])
+-    if test $am_cv_val_LC_MESSAGES = yes; then
+-      AC_DEFINE(HAVE_LC_MESSAGES, 1, [Define if your locale.h file contains LC_MESSAGES])
+-    fi
+-  fi])
+-
+-dnl From Jim Meyering.
+-dnl FIXME: migrate into libit.
+-
+-AC_DEFUN(AM_FUNC_OBSTACK,
+-[AC_CACHE_CHECK([for obstacks], am_cv_func_obstack,
+- [AC_TRY_LINK([#include "obstack.h"],
+-	      [struct obstack *mem;obstack_free(mem,(char *) 0)],
+-	      am_cv_func_obstack=yes,
+-	      am_cv_func_obstack=no)])
+- if test $am_cv_func_obstack = yes; then
+-   AC_DEFINE(HAVE_OBSTACK)
+- else
+-   LIBOBJS="$LIBOBJS obstack.o"
+- fi
+-])
+-
+-dnl From Jim Meyering.  Use this if you use the GNU error.[ch].
+-dnl FIXME: Migrate into libit
+-
+-AC_DEFUN(AM_FUNC_ERROR_AT_LINE,
+-[AC_CACHE_CHECK([for error_at_line], am_cv_lib_error_at_line,
+- [AC_TRY_LINK([],[error_at_line(0, 0, "", 0, "");],
+-              am_cv_lib_error_at_line=yes,
+-	      am_cv_lib_error_at_line=no)])
+- if test $am_cv_lib_error_at_line = no; then
+-   LIBOBJS="$LIBOBJS error.o"
+- fi
+- AC_SUBST(LIBOBJS)dnl
+-])
+-
+ # Macro to add for using GNU gettext.
+ # Ulrich Drepper <drepper@cygnus.com>, 1995.
+ 
+diff -urN icqlib.org/configure.in icqlib/configure.in
+--- icqlib.org/configure.in	Sun Aug 26 13:10:33 2001
++++ icqlib/configure.in	Sun Aug 26 13:15:55 2001
+@@ -3,7 +3,6 @@
+ AC_CONFIG_AUX_DIR(admin)
+ AM_INIT_AUTOMAKE(icqlib, `cat VERSION`)
+ AM_CONFIG_HEADER(config.h)
+-AC_CHECK_COMPILERS
+ #AC_CHECK_HEADERS(byteswap.h endian.h machine/endian.h arpa/nameser.h arpa/nameser_compat.h sys/param.h)
+ AC_CHECK_FUNCS(bswap_32 bswap_16)
+ AC_C_BIGENDIAN
