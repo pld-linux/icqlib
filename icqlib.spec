@@ -29,7 +29,7 @@ chat, and file transfer.
 icqlib jest najbardziej kompletn±, open sourcow± bibliotek±
 implementuj±c± protokó³ Mirabilis ICQ. icqlib aktualnie obs³uguj ok
 90% protoko³u ICQ UDP v5 oraz 80% ICQ TCP V2 w³±czaj±c w to nowy
-sposób rejstracji UIN, chat oraz transfer plików.
+sposób rejestracji UIN, chat oraz transfer plików.
 
 %package devel
 Summary:	Header files etc to develop icqlib applications
@@ -41,7 +41,7 @@ Requires:	%{name} = %{version}
 Header files etc you can use to develop icqlib applications.
 
 %description devel -l pl
-Pakiet ten zaziewra pliki nag³ówkowe i inne do libicq niezbêdne przy
+Pakiet ten zawiera pliki nag³ówkowe i inne do libicq niezbêdne przy
 tworzeniu aplikacji opartych o t± bibliotekê.
 
 %package static
