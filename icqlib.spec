@@ -7,7 +7,7 @@ Release:	0.%{snap}
 License:	GPL
 # snap from cvs repository
 Group:		Libraries
-Source0:	http://download.sourceforge.net/%{name}/%{name}-%{version}-%{snap}.tar.gz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}-%{snap}.tar.gz
 # Source0-md5:	69c009c91aaa7274862040950c339d5b
 Patch0:		%{name}-m4.patch
 URL:		http://kicq.sourceforge.net/icqlib.shtml
