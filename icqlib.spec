@@ -7,13 +7,6 @@ Release:	0.%{snap}
 License:	GPL
 # snap from cvs repository
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	http://download.sourceforge.net/%{name}/%{name}-%{version}-%{snap}.tar.gz
 Patch0:		%{name}-m4.patch
 URL:		http://kicq.sourceforge.net/icqlib.shtml
@@ -41,13 +34,6 @@ sposСb rejstracji UIN, chat oraz transfer plikСw.
 Summary:	Header files etc to develop icqlib applications
 Summary(pl):	Pliki nagЁСwkowe i inne do icqlib
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -61,13 +47,6 @@ tworzeniu aplikacji opartych o t╠ bibliotekЙ.
 Summary:	Static icqlib libraries
 Summary(pl):	Biblioteka statyczna icqlib
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
