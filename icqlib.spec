@@ -39,7 +39,7 @@ Requires:	%{name} = %{version}
 %description devel
 Header files etc you can use to develop icqlib applications.
 
-%description -l pl devel
+%description devel -l pl
 Pakiet ten zaziewra pliki nag³ówkowe i inne do libicq niezbêdne przy
 tworzeniu aplikacji opartych o t± bibliotekê.
 
@@ -52,7 +52,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static icqlib libraries.
 
-%description -l pl static
+%description static -l pl
 Biblioteka statyczna icqlib.
 
 %prep
@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc {ChangeLog,DEVEL,CHANGES*}.gz 
+%doc {ChangeLog,DEVEL,CHANGES*}.gz
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %{_includedir}/*.h
