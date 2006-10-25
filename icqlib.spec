@@ -7,12 +7,12 @@ Release:	0.%{snap}
 License:	GPL
 # snap from cvs repository
 Group:		Libraries
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}-%{snap}.tar.gz
+Source0:	http://dl.sourceforge.net/icqlib/%{name}-%{version}-%{snap}.tar.gz
 # Source0-md5:	69c009c91aaa7274862040950c339d5b
 Patch0:		%{name}-m4.patch
 URL:		http://kicq.sourceforge.net/icqlib.shtml
-BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libtool
 # right now conflicts because I don't know nothing about libicq
 Conflicts:	libicq
@@ -35,7 +35,7 @@ sposób rejestracji UIN, chat oraz transfer plików.
 Summary:	Header files etc to develop icqlib applications
 Summary(pl):	Pliki nag³ówkowe i inne do icqlib
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files etc you can use to develop icqlib applications.
@@ -48,7 +48,7 @@ tworzeniu aplikacji opartych o t± bibliotekê.
 Summary:	Static icqlib libraries
 Summary(pl):	Biblioteka statyczna icqlib
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static icqlib libraries.
