@@ -1,6 +1,6 @@
 %define	snap	20010826
 Summary:	icqlib library
-Summary(pl):	Biblioteka icqlib
+Summary(pl.UTF-8):   Biblioteka icqlib
 Name:		icqlib
 Version:	1.2.0
 Release:	0.%{snap}
@@ -25,35 +25,35 @@ icqlib currently supports approximately 90% of the ICQ UDP v5 protocol
 and 80% of the ICQ TCP v2 protocol, including new UIN registration,
 chat, and file transfer.
 
-%description -l pl
-icqlib jest najbardziej kompletn±, open sourcow± bibliotek±
-implementuj±c± protokó³ Mirabilis ICQ. icqlib aktualnie obs³uguj ok
-90% protoko³u ICQ UDP v5 oraz 80% ICQ TCP V2 w³±czaj±c w to nowy
-sposób rejestracji UIN, chat oraz transfer plików.
+%description -l pl.UTF-8
+icqlib jest najbardziej kompletnÄ…, open sourcowÄ… bibliotekÄ…
+implementujÄ…cÄ… protokÃ³Å‚ Mirabilis ICQ. icqlib aktualnie obsÅ‚uguj ok
+90% protokoÅ‚u ICQ UDP v5 oraz 80% ICQ TCP V2 wÅ‚Ä…czajÄ…c w to nowy
+sposÃ³b rejestracji UIN, chat oraz transfer plikÃ³w.
 
 %package devel
 Summary:	Header files etc to develop icqlib applications
-Summary(pl):	Pliki nag³ówkowe i inne do icqlib
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i inne do icqlib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files etc you can use to develop icqlib applications.
 
-%description devel -l pl
-Pakiet ten zawiera pliki nag³ówkowe i inne do libicq niezbêdne przy
-tworzeniu aplikacji opartych o t± bibliotekê.
+%description devel -l pl.UTF-8
+Pakiet ten zawiera pliki nagÅ‚Ã³wkowe i inne do libicq niezbÄ™dne przy
+tworzeniu aplikacji opartych o tÄ… bibliotekÄ™.
 
 %package static
 Summary:	Static icqlib libraries
-Summary(pl):	Biblioteka statyczna icqlib
+Summary(pl.UTF-8):   Biblioteka statyczna icqlib
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static icqlib libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna icqlib.
 
 %prep
