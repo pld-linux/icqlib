@@ -1,6 +1,6 @@
 %define	snap	20010826
 Summary:	icqlib library
-Summary(pl.UTF-8):   Biblioteka icqlib
+Summary(pl.UTF-8):	Biblioteka icqlib
 Name:		icqlib
 Version:	1.2.0
 Release:	0.%{snap}
@@ -33,7 +33,7 @@ sposób rejestracji UIN, chat oraz transfer plików.
 
 %package devel
 Summary:	Header files etc to develop icqlib applications
-Summary(pl.UTF-8):   Pliki nagłówkowe i inne do icqlib
+Summary(pl.UTF-8):	Pliki nagłówkowe i inne do icqlib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -46,7 +46,7 @@ tworzeniu aplikacji opartych o tą bibliotekę.
 
 %package static
 Summary:	Static icqlib libraries
-Summary(pl.UTF-8):   Biblioteka statyczna icqlib
+Summary(pl.UTF-8):	Biblioteka statyczna icqlib
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
